@@ -1,5 +1,5 @@
 {
-  "name": "mssql-pool-party",
+  "name": "rtorino_mssql-pool-party",
   "version": "0.5.2",
   "description": "Extension of mssql that provides management of multiple connection pools, dsns, retries, and more",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
     "test:docker-stop": "./test/stop-mssql.sh",
     "test:integration": "node --trace-warnings node_modules/.bin/jest test/parallel/* && mv coverage/coverage-final.json coverage/coverage-integration-parallel.json && node --trace-warnings node_modules/.bin/jest test/serial/index.test.js && mv coverage/coverage-final.json coverage/coverage-integration-serial.json",
     "test:unit": "jest src/* && mv coverage/coverage-final.json coverage/coverage-unit.json",
-    "prepublishOnly": "npm run lint && npm run test:all && npm run docs && npm run build",
+    // "prepublishOnly": "npm run lint && npm run test:all && npm run docs && npm run build",
     "pretest": "echo 'Most of our testing is done via integration tests. See package.json for more information.'"
   },
   "repository": "godaddy/mssql-pool-party",

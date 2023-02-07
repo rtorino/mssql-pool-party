@@ -1,3 +1,5 @@
+const { MSSQLError } = require('mssql');
+
 export default class PoolError extends Error {
   constructor(pool, err) {
     super(err);
@@ -5,6 +7,10 @@ export default class PoolError extends Error {
     if (pool && pool.dsn) {
       this.dsn = { ...pool.dsn };
       delete this.dsn.password;
+    }
+
+    if (err instanceof MSSQLError) {
+      Object.assign(this, err);
     }
   }
 }
